@@ -73,11 +73,11 @@
 
             // Check if the device is Android
             if (/android/i.test(userAgent)) {
-                window.location.href = "https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/amrkhaled04/3D-models/main/untitled.gltf&mode=ar_only";
+                window.location.href = "https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/amrkhaled04/maison/main/untitled.gltf&mode=ar_only";
             } 
             // Check if the device is iOS (iPhone, iPad, iPod)
             else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                window.location.href = "https://amrkhaled04.github.io/3D-models/ios.html"; // Redirect to the iOS-specific page
+                window.location.href = "https://amrkhaled04.github.io/maison/ios.html"; // Redirect to the iOS-specific page
             } 
             // Default case for other devices or desktop browsers
             else {
