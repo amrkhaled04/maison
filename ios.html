@@ -31,8 +31,10 @@
 <html lang="en">
 <body>
     <div>
-        <!-- AR link without an image -->
-        <a id="ar-link" rel="ar" href="https://amrkhaled04.github.io/maison/maison.usdz"></a>
+        <!-- AR link with text -->
+        <a rel="ar" href="https://amrkhaled04.github.io/maison/maison.usdz" style="font-size: 24px; color: blue; text-decoration: underline;">
+            Tap to view in AR
+        </a>
     </div>
 
     <!-- Message and fallback link for non-Safari users -->
@@ -45,8 +47,8 @@
             var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
             
             if (isSafari) {
-                // Automatically click the AR link to trigger AR Quick Look
-                document.getElementById('ar-link').click();
+                // Update message for iOS Safari users
+                document.getElementById('message').innerText = "Tap the link above to view in AR!";
             } else {
                 // Show message for non-Safari browsers
                 document.getElementById('message').innerText = "For the best AR experience, please open this link in Safari. Currently, you're using a browser that may not support AR viewing.";
