@@ -31,24 +31,29 @@
 <html lang="en">
 <body>
     <div>
-        <!-- AR link with text -->
-        <a rel="ar" href="https://amrkhaled04.github.io/maison/maison.usdz" style="font-size: 24px; color: blue; text-decoration: underline;">
-            Tap to view in AR
-        </a>
+        <!-- Placeholder for AR launch -->
+        <p id="message">Loading iOS AR experience...</p>
     </div>
 
-    <!-- Message and fallback link for non-Safari users -->
-    <p id="message">Loading iOS AR experience...</p>
+    <!-- Fallback link for non-Safari browsers -->
     <a id="download-link" href="https://amrkhaled04.github.io/3D-models/Zombie.usdz" style="display:none;">Or click here to download the file.</a>
 
     <script>
+        function launchIOSQuickLookAR(usdzSrc) {
+            const anchor = document.createElement('a');
+            anchor.setAttribute('rel', 'ar');
+            anchor.appendChild(document.createElement('img')); // Optional: Placeholder image, could be skipped
+            anchor.setAttribute('href', usdzSrc);
+            anchor.click(); // Programmatically simulates a click
+        }
+
         window.onload = function() {
             // Detect if the browser is Safari
             var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-            
+
             if (isSafari) {
-                // Update message for iOS Safari users
-                document.getElementById('message').innerText = "Tap the link above to view in AR!";
+                // Automatically launch the AR Quick Look
+                launchIOSQuickLookAR('https://amrkhaled04.github.io/maison/maison.usdz');
             } else {
                 // Show message for non-Safari browsers
                 document.getElementById('message').innerText = "For the best AR experience, please open this link in Safari. Currently, you're using a browser that may not support AR viewing.";
@@ -58,4 +63,5 @@
     </script>
 </body>
 </html>
+
 
