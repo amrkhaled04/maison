@@ -61,7 +61,7 @@
 </html> -->
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -92,6 +92,62 @@
 <body>
     <p>Redirecting, please wait...</p>
 </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Experience</title>
+    <script>
+        function checkUserAgent() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Check if the device is Android
+            if (/android/i.test(userAgent)) {
+                // Load AR.js scene for Android
+                document.getElementById('ar-container').style.display = 'block';
+            } 
+            // Check if the device is iOS (iPhone, iPad, iPod)
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://amrkhaled04.github.io/maison/ios.html"; // Redirect to the iOS-specific page
+            } 
+            // Default case for other devices or desktop browsers
+            else {
+                window.location.href = "https://your-default-link.com";
+            }
+        }
+
+        // Execute the user agent check when the page loads
+        window.onload = checkUserAgent;
+    </script>
+    <style>
+        #ar-container {
+            display: none; /* Hide by default */
+            width: 100%;
+            height: 100vh; /* Full screen */
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+    <!-- A-Frame and AR.js libraries -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+    <div id="ar-container">
+        <a-scene embedded arjs='sourceType: webcam;'>
+            <a-entity 
+                gltf-model="https://firebasestorage.googleapis.com/v0/b/feedup-45a9e.appspot.com/o/images%2Funtitled.glb?alt=media&token=1ea11095-a5c6-4c98-8eb9-8605192d0efa" 
+                scale="0.5 0.5 0.5" 
+                position="0 0 0" 
+                rotation="-90 0 0">
+            </a-entity>
+        </a-scene>
+    </div>
+    <p>Redirecting, please wait...</p>
+</body>
 </html>
+
 
 
