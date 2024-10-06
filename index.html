@@ -137,11 +137,11 @@
 <body>
     <div id="ar-container">
         <a-scene embedded arjs='sourceType: webcam;'>
-            <a-camera fov="100"></a-camera>  <!-- Adjust field of view as needed -->
+            <a-camera fov="75" scale="0.8 0.8 0.8"></a-camera>  <!-- Adjusted field of view and scale of camera -->
             <a-entity 
                 gltf-model="https://raw.githubusercontent.com/amrkhaled04/3D-models/main/untitled.gltf?alt=media&token=1ea11095-a5c6-4c98-8eb9-8605192d0efa" 
                 scale="1 1 1" 
-                position="0 0 0"  <!-- Adjust position further back -->
+                position="0 0 -2"  <!-- Moved further back -->
                 rotation="0 0 0">
             </a-entity>
             <a-entity geometry="primitive: plane; width: 100; height: 100" material="color: #7BC8A4; opacity: 0.5;" position="0 0 0"></a-entity>  <!-- Optional ground plane -->
@@ -150,6 +150,7 @@
     <p>Redirecting, please wait...</p>
 </body>
 </html>
+
 
 
 
